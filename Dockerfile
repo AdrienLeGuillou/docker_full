@@ -28,7 +28,7 @@ RUN apt-get update --fix-missing && apt-get install -y \
         libglib2.0-0 \
         # libicu57 \
         libicu-dev \
-        libjpeg-turbo \
+        #libjpeg-turbo \
         libjpeg-dev \
         liblzma5 \
         liblzma-dev \
