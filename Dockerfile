@@ -26,9 +26,9 @@ RUN apt-get update --fix-missing && apt-get install -y \
         libcurl3 \
         libcurl4-openssl-dev \
         libglib2.0-0 \
-        libicu57 \
+        # libicu57 \
         libicu-dev \
-        libjpeg62-turbo \
+        libjpeg-turbo \
         libjpeg-dev \
         liblzma5 \
         liblzma-dev \
@@ -39,7 +39,7 @@ RUN apt-get update --fix-missing && apt-get install -y \
         libpcre3-dev \
         libpng16-16 \
         libpng-dev \
-        libreadline7 \
+        #libreadline7 \
         libreadline-dev \
         libsm6 \
         libtiff5 \
