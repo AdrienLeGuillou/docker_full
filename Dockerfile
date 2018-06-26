@@ -42,5 +42,5 @@ run conda install -c anaconda --yes \
         tensorflow-gpu
 
 # install xgboost gpu
-COPY --from=libxgboost /home/xgboost /home/xgboost
-RUN cd /home/xgboost/python-package; python setup.py install
+COPY --from=libxgboost /home/xgboost /home/jovyan/xgboost
+RUN cd /home/jovyan/xgboost/python-package; python setup.py install
