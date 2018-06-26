@@ -50,4 +50,15 @@ RUN chmod -R 777 /home/jovyan/xgboost
 USER $NB_UID
 RUN cd /home/jovyan/xgboost/python-package; python setup.py install
 
+USER root
+
+RUN apt-get update && apt-get install -y --no-install-recommends xvfb && \
+    apt-get purge --autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
+
+USER $NB_UID
+
+RUN conda install --yes libglu
+
 RUN pip install gym
+
