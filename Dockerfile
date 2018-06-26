@@ -1,3 +1,6 @@
+# image where is built xgboos gpu
+FROM gallarus/libxgboost:latest as libxgboost
+
 FROM jupyter/datascience-notebook
 
 USER root
@@ -34,5 +37,10 @@ ENV NVIDIA_REQUIRE_CUDA "cuda>=9.0"
 
 USER $NB_UID
 
+# install tensorflow-gpu
 run conda install -c anaconda --yes \
-        tensorflow-gpu 
+        tensorflow-gpu
+
+# install xgboost gpu
+COPY --from=libxgboost /home/xgboost /home/xgboost
+RUN cd /home/xgboost/python-package; python setup.py install
