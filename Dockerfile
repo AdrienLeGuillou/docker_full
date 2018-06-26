@@ -49,3 +49,5 @@ RUN chmod -R 777 /home/jovyan/xgboost
 
 USER $NB_UID
 RUN cd /home/jovyan/xgboost/python-package; python setup.py install
+
+RUN pip install gym
