@@ -35,12 +35,6 @@ FROM jupyter/datascience-notebook
 # ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
 # ENV NVIDIA_REQUIRE_CUDA "cuda>=9.0"
 
-USER $NB_UID
-
-# install tensorflow-cpu
-run conda install -c anaconda --yes \
-        tensorflow
-
 # install xgboost gpu
 USER root
 COPY --from=libxgboost /home/xgboost /home/jovyan/xgboost
@@ -63,5 +57,6 @@ RUN conda install --yes libglu
 
 RUN pip install \
         gym \
+        tensorflow \
         keras \
         keras-rl
