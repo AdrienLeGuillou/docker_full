@@ -58,5 +58,5 @@ RUN conda install --yes libglu
 RUN pip install \
         gym \
         tensorflow-gpu \
-        keras-gpu \
+        keras \
         keras-rl
