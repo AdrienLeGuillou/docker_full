@@ -46,7 +46,9 @@ RUN cd /home/jovyan/xgboost/python-package; python setup.py install
 
 USER root
 
-RUN apt-get update && apt-get install -y --no-install-recommends xvfb && \
+RUN apt-get update && apt-get install -y --no-install-recommends\
+    cmake \
+    xvfb && \
     apt-get purge --autoremove -y && \
     rm -rf /var/lib/apt/lists/*
 
