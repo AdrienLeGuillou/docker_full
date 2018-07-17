@@ -56,6 +56,7 @@ USER $NB_UID
 RUN conda install --yes libglu
 
 RUN pip install \
+        joblib \ 
         gym \
         tensorflow \
         keras \
